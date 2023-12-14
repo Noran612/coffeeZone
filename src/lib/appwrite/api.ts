@@ -22,7 +22,7 @@ export async function createUserAccount(user: INewUser) {
     const avatarUrl = avatars.getInitials(user.name);
 
     const newUser = await saveUserToDB({
-      accountId: newAccount.$id,
+      accountid: newAccount.$id,
       name: newAccount.name,
       email: newAccount.email,
       username: user.username,
@@ -32,13 +32,14 @@ export async function createUserAccount(user: INewUser) {
     return newUser;
   } catch (error) {
     console.log(error);
+    console.log("this is where you failed hoe");
     return error;
   }
 }
 
 // ============================== SAVE USER TO DB
 export async function saveUserToDB(user: {
-  accountId: string;
+  accountid: string;
   email: string;
   name: string;
   imageUrl: URL;
@@ -90,7 +91,7 @@ export async function getCurrentUser() {
     const currentUser = await databases.listDocuments(
       appwriteConfig.databaseId,
       appwriteConfig.userCollectionId,
-      [Query.equal("accountId", currentAccount.$id)]
+      [Query.equal("accountid", currentAccount.$id)]
     );
 
     if (!currentUser) throw Error;
@@ -164,6 +165,7 @@ export async function createPost(post: INewPost) {
 // ============================== UPLOAD FILE
 export async function uploadFile(file: File) {
   try {
+    
     const uploadedFile = await storage.createFile(
       appwriteConfig.storageId,
       ID.unique(),
@@ -173,6 +175,7 @@ export async function uploadFile(file: File) {
     return uploadedFile;
   } catch (error) {
     console.log(error);
+    
   }
 }
 

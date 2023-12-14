@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply bg-dark-1 text-white min-h-screen font-inter;
+    @apply bg-amber-950 text-white min-h-screen font-inter;
   }
 }
 
@@ -100,7 +100,7 @@
   }
 
   .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #5c5c7b;
+    background: #07070c;
     border-radius: 50px;
   }
 
@@ -223,7 +223,7 @@
   }
 
   .leftsidebar-link {
-    @apply rounded-lg base-medium hover:bg-primary-500 transition;
+    @apply rounded-lg base-medium hover:bg-amber-800 transition;
   }
 
   /* Post Card */
@@ -267,7 +267,7 @@
 
   /* Button */
   .shad-button_primary {
-    @apply bg-primary-500 hover:bg-primary-500 text-light-1 flex gap-2 !important;
+    @apply bg-amber-800 hover:bg-slate-950 text-light-1 flex gap-2 !important;
   }
 
   .shad-button_dark_4 {

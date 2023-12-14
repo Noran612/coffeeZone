@@ -29,10 +29,11 @@ const LeftSidebar = () => {
       <div className="flex flex-col gap-11">
         <Link to="/" className="flex gap-3 items-center">
           <img
-            src="/assets/images/logo.svg"
+            src="/assets/images/LOGO.png"
             alt="logo"
             width={170}
             height={36}
+            
           />
         </Link>
 
@@ -62,7 +63,7 @@ const LeftSidebar = () => {
               <li
                 key={link.label}
                 className={`leftsidebar-link group ${
-                  isActive && "bg-primary-500"
+                  isActive && "bg-amber-800"
                 }`}>
                 <NavLink
                   to={link.route}
@@ -83,7 +84,7 @@ const LeftSidebar = () => {
       </div>
 
       <Button
-        variant="ghost"
+        //variant="ghost"
         className="shad-button_ghost"
         onClick={(e) => handleSignOut(e)}>
         <img src="/assets/icons/logout.svg" alt="logout" />
